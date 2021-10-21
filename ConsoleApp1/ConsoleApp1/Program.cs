@@ -46,7 +46,6 @@ namespace ConsoleApp1
                     Console.WriteLine("No such operator");
                     break;
             }
-
             Console.WriteLine($"Your result is {result}");
         }
     }
