@@ -50,6 +50,28 @@ namespace ConsoleApp1
             }
             return numberDouble;
         }
+
+        static public bool OperatorInput(out string mathOperator)
+        {
+            List<string> operatorsWithSecondArgument = new List<string> { "+", "-", "*", "/", "%", "^" };
+            List<string> operatorsWithOneArgument = new List<string> { "sqrt", "!"};
+            while (true)
+            {
+                mathOperator = Console.ReadLine();
+
+                if (operatorsWithSecondArgument.Contains(mathOperator))
+                {
+                    return true; // ask the second number
+                }
+                else if (operatorsWithOneArgument.Contains(mathOperator))
+                {
+                    return false;
+                }
+
+                Console.WriteLine();
+                Console.WriteLine("Error. Try again");
+            }
+        }
    }
 
 }
