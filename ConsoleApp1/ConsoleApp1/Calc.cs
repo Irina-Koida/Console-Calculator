@@ -38,6 +38,30 @@ namespace ConsoleApp1
             return x % y;
         }
 
+        public static double Power(double x, double power)
+        {
+            double res = x;
+            if (power == 0) return 1;
+            if (power == 1) return x;
+            for (int i = 0; i < power; i++)
+            {
+                res *= x;
+            }
+            return res;
+        }
+
+        public static double Factorial(double x)
+        {
+            if (x == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return x * Factorial(x - 1);
+            }
+        }
+
         static public double NumInput()
         {
             string numberString = Console.ReadLine();
@@ -54,7 +78,7 @@ namespace ConsoleApp1
         static public bool OperatorInput(out string mathOperator)
         {
             List<string> operatorsWithSecondArgument = new List<string> { "+", "-", "*", "/", "%", "^" };
-            List<string> operatorsWithOneArgument = new List<string> { "sqrt", "!"};
+            List<string> operatorsWithOneArgument = new List<string> {"!"};
             while (true)
             {
                 mathOperator = Console.ReadLine();

@@ -42,6 +42,12 @@ namespace ConsoleApp1
                 case "%":
                     result = Calc.RestOfDivide(firstOperand, secondOperand);
                     break;
+                case "^":
+                    result = Calc.Power(firstOperand, secondOperand);
+                    break;
+                case "!":
+                    result = Calc.Factorial(firstOperand);
+                    break;
                 default:
                     Console.WriteLine("No such operator");
                     break;
