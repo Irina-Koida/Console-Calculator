@@ -52,5 +52,19 @@ namespace TestProject1
             double actualResult = Calc.RestOfDivide(firstArgument, secondArgument);
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        [TestCase(5, 120)]
+        public void FactorialTest(double firstArgument, double expectedResult)
+        {
+            double actualResult = Calc.Factorial(firstArgument);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCase(2, 1, 2)]
+        public void PowerTest(double firstArgument, double secondArgument, double expectedResult)
+        {
+            double actualResult = Calc.Power(firstArgument, secondArgument);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
 }
