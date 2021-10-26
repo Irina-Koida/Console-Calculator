@@ -66,5 +66,20 @@ namespace TestProject1
             double actualResult = Calc.Power(firstArgument, secondArgument);
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        [TestCase(4, 0, 0)]
+        public void NegativeDivisionCheck(int num1, int num2)
+        {
+            bool flag = false;
+            try
+            {
+                Calc.Division(num1, num2);
+            }
+            catch (System.DivideByZeroException)
+            {
+                flag = true;
+            }
+            Assert.IsTrue(flag);
+        }
     }
 }
